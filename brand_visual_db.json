@@ -1,0 +1,95 @@
+[
+  {
+    "id": "36a327a2-2a91-4f4c-a834-5ee1a6f91103",
+    "brand_name": "EMAMI",
+    "sequence": 1,
+    "images": [
+      {
+        "filename": "EMAMI_slide_1_36a327a2.png",
+        "path": "static/brand_visuals/EMAMI_slide_1_36a327a2.png",
+        "order": 1
+      }
+    ],
+    "created_at": "2025-10-16T11:48:31.096046"
+  },
+  {
+    "id": "f5ca58e0-3a63-4d22-9e3c-c6202cab0037",
+    "brand_name": "DABUR",
+    "sequence": 1,
+    "images": [
+      {
+        "filename": "Swindox-10O.png",
+        "ocr_text": "Swindox-10O",
+        "path": "static/uploads/Swindox-10O.png",
+        "order": 1
+      }
+    ],
+    "created_at": "2025-10-16T11:55:03.586927"
+  },
+  {
+    "id": "75af7fff-88c0-4f6b-8787-12803b6bf216",
+    "brand_name": "DABUR",
+    "sequence": 3,
+    "images": [
+      {
+        "filename": "Moondec-50.png",
+        "ocr_text": "Moondec-50",
+        "path": "static/uploads/Moondec-50.png",
+        "order": 1
+      },
+      {
+        "filename": "SWINDOX.png",
+        "ocr_text": "SWINDOX",
+        "path": "static/uploads/SWINDOX.png",
+        "order": 2
+      },
+      {
+        "filename": "Oflain.png",
+        "ocr_text": "Oflain",
+        "path": "static/uploads/Oflain.png",
+        "order": 3
+      },
+      {
+        "filename": "seezcold.png",
+        "ocr_text": "seezcold",
+        "path": "static/uploads/seezcold.png",
+        "order": 4
+      },
+      {
+        "filename": "Dydrofest-10.png",
+        "ocr_text": "Dydrofest-10",
+        "path": "static/uploads/Dydrofest-10.png",
+        "order": 5
+      }
+    ],
+    "created_at": "2025-10-16T12:22:34.733891"
+  },
+  {
+    "id": "d668ed32-d29a-4b82-ab9d-83603ee70969",
+    "brand_name": "EMAMI",
+    "sequence": 1,
+    "images": [
+      {
+        "filename": "Tendoswisss.png",
+        "ocr_text": "Tendoswisss",
+        "path": "static/uploads/Tendoswisss.png",
+        "order": 1
+      }
+    ],
+    "created_at": "2025-10-16T12:30:54.295144"
+  },
+  {
+    "id": "09ded65e-1141-4e75-9a1f-180003b72bbf",
+    "brand_name": "DABUR",
+    "sequence": 1,
+    "images": [
+      {
+        "filename": "Tendoswiss_1.png",
+        "ocr_text": "Tendoswiss",
+        "path": "static/uploads/Tendoswiss_1.png",
+        "order": 1
+      }
+    ],
+    "created_at": "2025-10-22T13:24:39.784067"
+  }
+]

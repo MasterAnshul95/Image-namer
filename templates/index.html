@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Wise Visual Create</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
+    }
+
+    .header {
+      background: #0c7b93;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .page-title {
+      text-align: center;
+      color: #0c7b93;
+      font-size: 28px;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .form-label {
+      background: #0c7b93;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .form-control {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    select.form-control {
+      cursor: pointer;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      flex: 1;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .file-input-display {
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+      display: block;
+    }
+
+    .save-btn {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin: 30px auto 0;
+      transition: background 0.3s;
+    }
+
+    .save-btn:hover {
+      background: #e55a00;
+    }
+
+    .save-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .preview-section {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    .preview-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .preview-item {
+      position: relative;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-label {
+      padding: 10px;
+      background: #f8f9fa;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .remove-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .remove-btn:hover {
+      background: #c82333;
+    }
+
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #0c7b93;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .error-msg {
+      color: #dc3545;
+      background: #f8d7da;
+      padding: 12px;
+      border-radius: 4px;
+      margin: 15px 0;
+      display: none;
+    }
+
+    .success-msg {
+      color: #155724;
+      background: #d4edda;
+      padding: 12px;
+      border-radius: 4px;
+      margin: 15px 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>OptCRM - Brand Visual Management</h1>
+    <div>
+      <a href="/" style="color: white; text-decoration: none;">← Back to Logo Extractor</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="page-title">Brand Wise Visual Create</h2>
+
+    <div class="error-msg" id="errorMsg"></div>
+    <div class="success-msg" id="successMsg"></div>
+
+    <form id="brandVisualForm">
+      <div class="form-row">
+        <div class="form-label">Brand Name</div>
+        <select class="form-control" id="brandName" required>
+          <option value="">Select Brand</option>
+          <option value="PATANJALI">PATANJALI</option>
+          <option value="HIMALAYA">HIMALAYA</option>
+          <option value="DABUR">DABUR</option>
+          <option value="EMAMI">EMAMI</option>
+          <option value="ZANDU">ZANDU</option>
+          <option value="BAIDYANATH">BAIDYANATH</option>
+          <option value="OTHER">OTHER</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">Slide Image</div>
+        <div class="file-input-wrapper">
+          <input type="file" id="slideImages" accept="image/*" multiple required>
+          <div class="file-input-display" id="fileDisplay">No file chosen</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-label">sequence of slide</div>
+        <select class="form-control" id="sequenceSlide" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+
+      <div class="loader" id="loader"></div>
+
+      <div class="preview-section" id="previewSection" style="display: none;">
+        <h3 class="preview-title">Slide Previews</h3>
+        <div class="preview-grid" id="previewGrid"></div>
+      </div>
+
+      <button type="submit" class="save-btn" id="saveBtn">Save</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('brandVisualForm');
+    const brandName = document.getElementById('brandName');
+    const slideImages = document.getElementById('slideImages');
+    const fileDisplay = document.getElementById('fileDisplay');
+    const sequenceSlide = document.getElementById('sequenceSlide');
+    const saveBtn = document.getElementById('saveBtn');
+    const loader = document.getElementById('loader');
+    const errorMsg = document.getElementById('errorMsg');
+    const successMsg = document.getElementById('successMsg');
+    const previewSection = document.getElementById('previewSection');
+    const previewGrid = document.getElementById('previewGrid');
+
+    let uploadedSlides = [];
+
+    // Update file display
+    slideImages.addEventListener('change', async (e) => {
+      const files = e.target.files;
+      if (files.length > 0) {
+        fileDisplay.textContent = `${files.length} file(s) selected`;
+        
+        // Upload and preview immediately
+        await uploadSlides(files);
+      } else {
+        fileDisplay.textContent = 'No file chosen';
+        previewSection.style.display = 'none';
+        uploadedSlides = [];
+      }
+    });
+
+    async function uploadSlides(files) {
+      try {
+        loader.style.display = 'block';
+        errorMsg.style.display = 'none';
+        
+        const formData = new FormData();
+        for (let file of files) {
+          formData.append('slides', file);
+        }
+
+        const res = await fetch('/upload_brand_slides', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await res.json();
+        loader.style.display = 'none';
+
+        if (data.error) {
+          showError(data.error);
+          return;
+        }
+
+        uploadedSlides = data.results;
+        displayPreviews();
+      } catch (err) {
+        loader.style.display = 'none';
+        showError('Failed to upload images');
+        console.error(err);
+      }
+    }
+
+    function displayPreviews() {
+      previewGrid.innerHTML = '';
+      
+      if (uploadedSlides.length === 0) {
+        previewSection.style.display = 'none';
+        return;
+      }
+
+      previewSection.style.display = 'block';
+      
+      uploadedSlides.forEach((slide, index) => {
+        const div = document.createElement('div');
+        div.className = 'preview-item';
+        div.innerHTML = `
+          <img src="${slide.preview}" alt="Slide ${index + 1}">
+          <div class="preview-label">Slide ${index + 1}</div>
+          <button type="button" class="remove-btn" onclick="removeSlide(${index})" title="Remove">×</button>
+        `;
+        previewGrid.appendChild(div);
+      });
+    }
+
+    window.removeSlide = function(index) {
+      uploadedSlides.splice(index, 1);
+      displayPreviews();
+      
+      if (uploadedSlides.length === 0) {
+        slideImages.value = '';
+        fileDisplay.textContent = 'No file chosen';
+      } else {
+        fileDisplay.textContent = `${uploadedSlides.length} file(s) selected`;
+      }
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const brand = brandName.value;
+      const sequence = sequenceSlide.value;
+      
+      if (!brand) {
+        showError('Please select a brand name');
+        return;
+      }
+      
+      if (uploadedSlides.length === 0) {
+        showError('Please upload at least one slide image');
+        return;
+      }
+
+      try {
+        saveBtn.disabled = true;
+        loader.style.display = 'block';
+        errorMsg.style.display = 'none';
+        successMsg.style.display = 'none';
+
+        const payload = {
+          brandName: brand,
+          slides: uploadedSlides,
+          sequence: parseInt(sequence)
+        };
+
+        const res = await fetch('/save_brand_visual', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        loader.style.display = 'none';
+        saveBtn.disabled = false;
+
+        if (res.ok) {
+          // Download the zip file
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `${brand.replace(/\s+/g, '_')}_slides.zip`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+
+          showSuccess('Brand visual saved successfully and images downloaded!');
+          
+          // Reset form after 2 seconds
+          setTimeout(() => {
+            form.reset();
+            uploadedSlides = [];
+            previewSection.style.display = 'none';
+            fileDisplay.textContent = 'No file chosen';
+            successMsg.style.display = 'none';
+          }, 2000);
+        } else {
+          const errData = await res.json();
+          showError(errData.error || 'Failed to save brand visual');
+        }
+      } catch (err) {
+        loader.style.display = 'none';
+        saveBtn.disabled = false;
+        showError('An error occurred while saving');
+        console.error(err);
+      }
+    });
+
+    function showError(message) {
+      errorMsg.textContent = message;
+      errorMsg.style.display = 'block';
+      setTimeout(() => {
+        errorMsg.style.display = 'none';
+      }, 5000);
+    }
+
+    function showSuccess(message) {
+      successMsg.textContent = message;
+      successMsg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
