@@ -12,6 +12,8 @@ from datetime import datetime
 
 import easyocr
 import tempfile
+import gradio as gr
+
 
 app = Flask(__name__)
 CORS(app)  
@@ -20,6 +22,8 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 temp_dir = 'static/temp'
 os.makedirs(temp_dir, exist_ok=True)
 db_file = 'brand_visual_db.json'
+
+
 
 # Initialize EasyOCR with custom directories to avoid permission issues
 try:
@@ -46,6 +50,9 @@ except Exception as e:
     print(f"❌ Failed to initialize EasyOCR: {e}")
     reader = None
 
+
+def run_app():
+    return "App running"
 
 def load_db():
     """Load database from JSON file"""
@@ -400,6 +407,8 @@ def download_file(filename):
     return send_file(path, as_attachment=True)
 
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=7860)
+
