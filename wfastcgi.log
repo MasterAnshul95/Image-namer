@@ -1,0 +1,189 @@
+2025-11-07 16:30:57.169988: Error occurred while reading WSGI handler:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\model'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 24, in <module>
+    reader = easyocr.Reader(['en'])
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 60, in __init__
+    Path(self.model_storage_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+
+
+StdOut: 
+
+StdErr: 
+2025-11-07 16:30:57.170992: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\model'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 24, in <module>
+    reader = easyocr.Reader(['en'])
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 60, in __init__
+    Path(self.model_storage_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+2025-11-07 16:30:57.170992: Running on_exit tasks
+2025-11-07 16:30:57.171995: wfastcgi.py 3.0.0 closed
+2025-11-07 16:31:02.953745: Error occurred while reading WSGI handler:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\model'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 24, in <module>
+    reader = easyocr.Reader(['en'])
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 60, in __init__
+    Path(self.model_storage_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+
+
+StdOut: 
+
+StdErr: 
+2025-11-07 16:31:02.957432: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\model'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 24, in <module>
+    reader = easyocr.Reader(['en'])
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 60, in __init__
+    Path(self.model_storage_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+2025-11-07 16:31:02.958434: Running on_exit tasks
+2025-11-07 16:31:02.959436: wfastcgi.py 3.0.0 closed
+2025-11-07 16:33:12.841814: Error occurred while reading WSGI handler:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\user_network'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 28, in <module>
+    reader = easyocr.Reader(['en'], model_storage_directory=custom_model_dir)
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 65, in __init__
+    Path(self.user_network_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+
+
+StdOut: 
+
+StdErr: 
+2025-11-07 16:33:12.842318: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR\\user_network'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 791, in main
+    env, handler = read_wsgi_handler(response.physical_path)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 633, in read_wsgi_handler
+    handler = get_wsgi_handler(os.getenv("WSGI_HANDLER"))
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 600, in get_wsgi_handler
+    handler = __import__(module_name, fromlist=[name_list[0][0]])
+  File "C:\Users\aansh\Desktop\ProjectOpt\image\New\.\app.py", line 28, in <module>
+    reader = easyocr.Reader(['en'], model_storage_directory=custom_model_dir)
+  File "C:\Python310\lib\site-packages\easyocr\easyocr.py", line 65, in __init__
+    Path(self.user_network_directory).mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1177, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python310\lib\pathlib.py", line 1173, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\WINDOWS\\system32\\config\\systemprofile\\.EasyOCR'
+2025-11-07 16:33:12.842318: Running on_exit tasks
+2025-11-07 16:33:12.843319: wfastcgi.py 3.0.0 closed
+2025-11-07 16:40:06.992086: wfastcgi.py will restart when files in C:\Users\aansh\Desktop\ProjectOpt\image\New\ are changed: .*((\.py)|(\.config))$
+2025-11-07 16:40:06.993282: wfastcgi.py 3.0.0 initialized
+2025-11-07 16:45:10.699821: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+OSError: [Errno 22] Invalid argument
+2025-11-07 16:45:10.700971: Running on_exit tasks
+2025-11-07 16:45:10.700971: wfastcgi.py 3.0.0 closed
+2025-11-07 16:46:46.358436: wfastcgi.py will restart when files in C:\Users\aansh\Desktop\ProjectOpt\image\New\ are changed: .*((\.py)|(\.config))$
+2025-11-07 16:46:46.359438: wfastcgi.py 3.0.0 initialized
+2025-11-07 16:47:00.213689: wfastcgi.py exiting because app.py has changed, matching .*((\.py)|(\.config))$
+2025-11-07 16:47:00.214701: Running on_exit tasks
+2025-11-14 11:02:16.019825: wfastcgi.py will restart when files in C:\Users\aansh\Desktop\ProjectOpt\image\New\ are changed: .*((\.py)|(\.config))$
+2025-11-14 11:02:16.020849: wfastcgi.py 3.0.0 initialized
+2025-11-14 11:11:26.580373: Unhandled exception in wfastcgi.py: Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 774, in main
+    record = read_fastcgi_record(fcgi_stream)
+  File "C:\Python310\lib\site-packages\wfastcgi.py", line 158, in read_fastcgi_record
+    data = stream.read(8)     # read record
+OSError: [Errno 22] Invalid argument
+2025-11-14 11:11:26.580373: Running on_exit tasks
+2025-11-14 11:11:26.580373: wfastcgi.py 3.0.0 closed

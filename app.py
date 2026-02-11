@@ -11,6 +11,7 @@ import json
 from datetime import datetime
 
 import easyocr
+import tempfile
 
 app = Flask(__name__)
 CORS(app)  
@@ -20,8 +21,30 @@ temp_dir = 'static/temp'
 os.makedirs(temp_dir, exist_ok=True)
 db_file = 'brand_visual_db.json'
 
-# Initialize EasyOCR
-reader = easyocr.Reader(['en'])
+# Initialize EasyOCR with custom directories to avoid permission issues
+try:
+    # Create custom directories in the application folder (writable)
+    app_dir = os.path.dirname(os.path.abspath(__file__))
+    custom_model_dir = os.path.join(app_dir, "easyocr_models")
+    user_network_dir = os.path.join(app_dir, "easyocr_cache")
+    
+    os.makedirs(custom_model_dir, exist_ok=True)
+    os.makedirs(user_network_dir, exist_ok=True)
+    
+    # Initialize reader with explicit paths
+    reader = easyocr.Reader(
+        ['en'],
+        model_storage_directory=custom_model_dir,
+        user_network_directory=user_network_dir,
+        gpu=False  # Set to True if you have CUDA GPU support
+    )
+    print(f"✅ EasyOCR initialized successfully")
+    print(f"   Model dir: {custom_model_dir}")
+    print(f"   Cache dir: {user_network_dir}")
+    
+except Exception as e:
+    print(f"❌ Failed to initialize EasyOCR: {e}")
+    reader = None
 
 
 def load_db():
@@ -40,6 +63,9 @@ def save_db(data):
 
 def extract_main_text(image_path):
     """Extract the text with largest font size visually (by bounding box height)."""
+    if reader is None:
+        return "OCR not available"
+    
     try:
         results = reader.readtext(image_path)
         if not results:
@@ -373,9 +399,6 @@ def download_file(filename):
         return "File not found", 404
     return send_file(path, as_attachment=True)
 
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
